@@ -1,4 +1,4 @@
-class Car:
+class Bike:
     def __init__(self):
         self.speed=0
         self.odometer=0
@@ -8,9 +8,14 @@ class Car:
         print("SPEED. IS {} KPH!".format(self.speed))
 
     def accelerate(self):
-        self.speed += 5
+        if self.speed >= 10:
+            print("Too fast! I will DIEE")
+        else:
+            self.speed += 2
 
     def brake(self):
+        if self.speed <=0:
+            print("Negative breaking? Only on Lear jets bro")
         self.speed -= 5
 
     def step(self):
@@ -18,29 +23,25 @@ class Car:
         self.time += 1
 
     def average_speed(self):
-        if self.time != 0:
-            return self.odometer / self.time
-        else:
-            return 0
+        return self.odometer / self.time
 
 
 if __name__ == '__main__':
-    my_car = Car()
-    print("I'm a car!")
+    my_bike = Bike
+    print("I'm a bike! A very nice bike")
     while True:
-        action = input("What should I do? [A]ccelerate, [B]rake, "
+        action = input("What will you do? [A]ccelerate, [B]rake, "
                        "show [O]dometer, or show average [S]peed?").upper()
         if action not in "ABOS" or len(action) != 1:
             print("I don't know how to do that")
             continue
         if action == 'A':
-            my_car.accelerate()
+            my_bike.accelerate()
         elif action == 'B':
-            my_car.brake()
+            my_bike.brake()
         elif action == 'O':
-            print("The car has driven {} kilometers".format(my_car.odometer))
+            print("The bike has driven {} kilometers".format(my_bike.odometer))
         elif action == 'S':
-            print("The car's average speed was {} kph".format(my_car.average_speed()))
-        my_car.step()
-        my_car.say_state()
-
+            print("The bike's average speed was {} kph".format(my_bike.average_speed()))
+        my_bike.step()
+        my_bike.say_state()

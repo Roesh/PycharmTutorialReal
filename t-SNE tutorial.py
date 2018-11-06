@@ -1,0 +1,1 @@
+#https://docs.scipy.org/doc/numpy-1.15.1/user/quickstart.html
