@@ -1,1 +1,1 @@
-#https://docs.scipy.org/doc/numpy-1.15.1/user/quickstart.html
+#https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html
